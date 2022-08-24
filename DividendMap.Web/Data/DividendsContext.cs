@@ -10,6 +10,5 @@ public class DividendsContext : DbContext
     }
 
     public DbSet<Company> Companies { get; set; }
-    public DbSet<Dividend> Dividends { get; set; }
-    public DbSet<DividendMap.Web.Models.CompanyViewModel>? CompanyViewModel { get; set; }
+    public DbSet<Dividend> Dividends { get; set; }    
 }

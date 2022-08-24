@@ -1,4 +1,6 @@
 using DividendMap.Web.Data;
+using DividendMap.Web.Data.Adapters;
+using DividendMap.Web.Domain.Ports;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +10,7 @@ builder.Services.AddControllersWithViews();
 var connectionString = builder.Configuration.GetConnectionString("DividendsDb");
 builder.Services.AddDbContext<DividendsContext>(x => x.UseSqlServer(connectionString));
 
+builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

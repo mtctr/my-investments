@@ -1,5 +1,6 @@
 ﻿using DividendMap.Web.Data;
 using DividendMap.Web.Domain.Entities;
+using DividendMap.Web.Domain.Ports;
 using DividendMap.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -7,36 +8,30 @@ using Microsoft.EntityFrameworkCore;
 namespace DividendMap.Web.Controllers;
 
 public class CompaniesController : Controller
-{
-    private readonly DividendsContext _context;
+{    
+    private readonly ICompanyRepository _companyRepository;    
 
-    public CompaniesController(DividendsContext context)
+    public CompaniesController(ICompanyRepository companyRepository)
     {
-        _context = context;
+        _companyRepository = companyRepository;
     }
 
     // GET: Companies
     public async Task<IActionResult> Index()
     {
-        return _context.Companies != null ?
-                    View(await _context.Companies.ToListAsync()) :
-                    Problem("Entity set 'DividendsContext.Companies'  is null.");
+        return View(await _companyRepository.GetAll());
     }
 
     // GET: Companies/Details/5
     public async Task<IActionResult> Details(int? id)
     {
-        if (id == null || _context.Companies == null)
-        {
+        if (id == null)        
             return NotFound();
-        }
 
-        var company = await _context.Companies
-            .FirstOrDefaultAsync(m => m.Id == id);
-        if (company == null)
-        {
+        var company = _companyRepository.FirstOrDefault(m => m.Id == id);
+        if (company == null)        
             return NotFound();
-        }
+        
 
         return View(company);
     }
@@ -58,24 +53,21 @@ public class CompaniesController : Controller
             return View(viewModel);
 
         var company = new Company(viewModel.Name, viewModel.StockName);
-        _context.Add(company);
-        await _context.SaveChangesAsync();
+        await _companyRepository.Add(company);
         return RedirectToAction(nameof(Index));
     }
 
     // GET: Companies/Edit/5
     public async Task<IActionResult> Edit(int? id)
     {
-        if (id == null || _context.Companies == null)
-        {
+        if (id == null)        
             return NotFound();
-        }
+        
 
-        var company = await _context.Companies.FindAsync(id);
-        if (company == null)
-        {
+        var company = await _companyRepository.GetById(id.GetValueOrDefault());
+        if (company == null)        
             return NotFound();
-        }
+        
         var viewModel = new CompanyViewModel
         {
             Id = company.Id,
@@ -101,15 +93,14 @@ public class CompaniesController : Controller
 
         try
         {
-            var company = await _context.Companies.FindAsync(id);
+            var company = await _companyRepository.GetById(id);
             company.ChangeName(viewModel.Name);
             company.ChangeStockName(viewModel.StockName);
-            _context.Update(company);
-            await _context.SaveChangesAsync();
+            await _companyRepository.Update(company);            
         }
         catch (DbUpdateConcurrencyException)
         {
-            if (!CompanyExists(id))
+            if (!_companyRepository.Exists(id))
             {
                 return NotFound();
             }
@@ -124,13 +115,11 @@ public class CompaniesController : Controller
     // GET: Companies/Delete/5
     public async Task<IActionResult> Delete(int? id)
     {
-        if (id == null || _context.Companies == null)
-        {
+        if (id == null)        
             return NotFound();
-        }
 
-        var company = await _context.Companies
-            .FirstOrDefaultAsync(m => m.Id == id);
+
+        var company = await _companyRepository.GetById(id.GetValueOrDefault());
         if (company == null)
         {
             return NotFound();
@@ -143,23 +132,13 @@ public class CompaniesController : Controller
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> DeleteConfirmed(int id)
-    {
-        if (_context.Companies == null)
-        {
-            return Problem("Entity set 'DividendsContext.Companies'  is null.");
-        }
-        var company = await _context.Companies.FindAsync(id);
+    {        
+        var company = await _companyRepository.GetById(id);
         if (company != null)
         {
-            _context.Companies.Remove(company);
+            await _companyRepository.Remove(company);
         }
-
-        await _context.SaveChangesAsync();
+        
         return RedirectToAction(nameof(Index));
-    }
-
-    private bool CompanyExists(int id)
-    {
-        return (_context.Companies?.Any(e => e.Id == id)).GetValueOrDefault();
-    }
+    }    
 }

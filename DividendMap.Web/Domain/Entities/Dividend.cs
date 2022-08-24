@@ -8,6 +8,8 @@ public class Dividend
     public DateTime PayDate { get; private set; }
     public int CompanyId { get; private set; }
     public DividendType Type { get; private set; }
+
+    public Company Company { get; private set; }
 }
 public enum DividendType
 {
