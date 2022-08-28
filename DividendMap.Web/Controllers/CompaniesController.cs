@@ -28,7 +28,7 @@ public class CompaniesController : Controller
         if (id == null)        
             return NotFound();
 
-        var company = _companyRepository.FirstOrDefault(m => m.Id == id);
+        var company = await _companyRepository.FirstOrDefault(m => m.Id == id);
         if (company == null)        
             return NotFound();
         

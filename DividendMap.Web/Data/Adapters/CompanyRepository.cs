@@ -27,7 +27,7 @@ namespace DividendMap.Web.Data.Adapters
 
         public async Task<Company> FirstOrDefault(Expression<Func<Company, bool>> predicate)
         {            
-            return await _context.Companies.FirstOrDefaultAsync(predicate);
+            return await _context.Companies.Include(x => x.DividendHistory).FirstOrDefaultAsync(predicate);
         }
 
         public async Task<IEnumerable<Company>> GetAll()

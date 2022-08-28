@@ -1,4 +1,6 @@
-﻿namespace DividendMap.Web.Domain.Entities;
+﻿using System.Globalization;
+
+namespace DividendMap.Web.Domain.Entities;
 
 public class Company
 {
@@ -26,6 +28,16 @@ public class Company
     public void AddPayment(Dividend dividend)
     {
         DividendHistory.Add(dividend);
+    }
+    public IEnumerable<object> DividendsByMonth()
+    {
+        var dateTimeFormatInfo = new DateTimeFormatInfo();
+
+        return DividendHistory
+            .GroupBy(x => x.ExDate.Month)
+            .OrderBy(x => x.Key)
+            .Select(x => new object[2]{ dateTimeFormatInfo.GetAbbreviatedMonthName(x.Key), x.Count()})
+            .ToList();
     }
 
 }
