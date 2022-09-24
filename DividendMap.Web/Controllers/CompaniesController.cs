@@ -72,7 +72,7 @@ public class CompaniesController : Controller
         {
             Id = company.Id,
             Name = company.Name,
-            StockName = company.StockName
+            StockName = company.Ticker
         };
         return View(viewModel);
     }

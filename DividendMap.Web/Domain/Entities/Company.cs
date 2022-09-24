@@ -9,12 +9,12 @@ public class Company
     public Company(string name, string stockName)
     {
         Name = name;
-        StockName = stockName;
+        Ticker = stockName;
     }
 
     public int Id { get; private set; }
     public string Name { get; private set; }
-    public string StockName { get; private set; }
+    public string Ticker { get; private set; }
     public IList<Dividend> DividendHistory { get; private set; } = new List<Dividend>();
 
     public void ChangeName(string newName)
@@ -23,7 +23,7 @@ public class Company
     }
     public void ChangeStockName(string newStockName)
     {
-        StockName = newStockName;
+        Ticker = newStockName;
     }
     public void AddPayment(Dividend dividend)
     {
@@ -34,7 +34,7 @@ public class Company
         var dateTimeFormatInfo = new DateTimeFormatInfo();
 
         return DividendHistory
-            .GroupBy(x => x.ExDate.Month)
+            .GroupBy(x => x.InDate.Month)
             .OrderBy(x => x.Key)
             .Select(x => new object[2]{ dateTimeFormatInfo.GetAbbreviatedMonthName(x.Key), x.Count()})
             .ToList();
