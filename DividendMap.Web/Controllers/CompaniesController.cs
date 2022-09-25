@@ -9,11 +9,13 @@ namespace DividendMap.Web.Controllers;
 
 public class CompaniesController : Controller
 {    
-    private readonly ICompanyRepository _companyRepository;    
+    private readonly ICompanyRepository _companyRepository;
+    private readonly IDividendLoader _dividendLoader;
 
-    public CompaniesController(ICompanyRepository companyRepository)
+    public CompaniesController(ICompanyRepository companyRepository, IDividendLoader dividendLoader)
     {
         _companyRepository = companyRepository;
+        _dividendLoader = dividendLoader;
     }
 
     // GET: Companies
@@ -36,6 +38,14 @@ public class CompaniesController : Controller
         return View(company);
     }
 
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> UpdateDividends(int id)
+    {
+        await _dividendLoader.UpdateDividends(id);
+        return RedirectToAction(nameof(Details), new { id });
+    }
+
     // GET: Companies/Create
     public IActionResult Create()
     {
@@ -55,7 +65,7 @@ public class CompaniesController : Controller
         var company = new Company(viewModel.Name, viewModel.StockName);
         await _companyRepository.Add(company);
         return RedirectToAction(nameof(Index));
-    }
+    }    
 
     // GET: Companies/Edit/5
     public async Task<IActionResult> Edit(int? id)

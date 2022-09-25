@@ -11,6 +11,12 @@
     <a asp-action="Index">Back to List</a>
 </div>
 <div>
+    <form asp-action="UpdateDividends">
+        <input type="hidden" asp-for="Id"/>
+        <button type="submit" class="btn btn-secondary">Update Dividends</button>
+    </form>
+</div>
+<div>
     <h4>Company</h4>
     <hr />
     <dl class="row">
@@ -30,7 +36,7 @@
 </div>
 
 <h5>Dividends</h5>
-<table class="table">
+<table class="table datatable">
     <thead>
         <tr>
             <th>Ex Date</th>
@@ -44,7 +50,7 @@
         {
             <tr>
                 <td>@dividend.InDate.ToShortDateString()</td>
-                <td>@dividend.PayDate.ToShortDateString()</td>
+                <td>@dividend.PayDate.GetValueOrDefault().ToShortDateString()</td>
                 <td>@dividend.Value.ToString()</td>
                 <td>@dividend.Type.ToString()</td>
             </tr>
@@ -57,8 +63,7 @@
     google.charts.load("current", { packages: ["corechart"] });
     google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
-        let dividends = @Json.Serialize(Model.DividendsByMonth());
-        console.log(dividends);
+        let dividends = @Json.Serialize(Model.DividendsByMonth());        
         var data = google.visualization.arrayToDataTable([['Month', 'Times']].concat(dividends));
 
         var options = {

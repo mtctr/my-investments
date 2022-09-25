@@ -25,6 +25,10 @@ public class Company
     {
         Ticker = newStockName;
     }
+    public void ClearPayments()
+    {
+        DividendHistory.Clear();
+    }
     public void AddPayment(Dividend dividend)
     {
         DividendHistory.Add(dividend);

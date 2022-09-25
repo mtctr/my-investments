@@ -1,9 +1,9 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace DividendMap.Web.Services.WebCrawler.StatusInvest
+namespace DividendMap.Web.Services.Adapters.WebCrawler.StatusInvest
 {
     public class DividendModel
-    {   
+    {
         [JsonPropertyName("et")]
         public string Type { get; set; }
         [JsonPropertyName("ed")]
