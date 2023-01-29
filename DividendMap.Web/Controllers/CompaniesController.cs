@@ -62,7 +62,7 @@ public class CompaniesController : Controller
         if (!ModelState.IsValid)
             return View(viewModel);
 
-        var company = new Company(viewModel.Name, viewModel.StockName);
+        var company = new Company(viewModel.Name, viewModel.Ticker);
         await _companyRepository.Add(company);
         return RedirectToAction(nameof(Index));
     }    
@@ -82,7 +82,7 @@ public class CompaniesController : Controller
         {
             Id = company.Id,
             Name = company.Name,
-            StockName = company.Ticker
+            Ticker = company.Ticker
         };
         return View(viewModel);
     }
@@ -105,7 +105,7 @@ public class CompaniesController : Controller
         {
             var company = await _companyRepository.GetById(id);
             company.ChangeName(viewModel.Name);
-            company.ChangeStockName(viewModel.StockName);
+            company.ChangeStockName(viewModel.Ticker);
             await _companyRepository.Update(company);            
         }
         catch (DbUpdateConcurrencyException)

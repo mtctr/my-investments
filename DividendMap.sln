@@ -5,7 +5,9 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DividendMap.Web", "DividendMap.Web\DividendMap.Web.csproj", "{705D448D-F9A5-4407-ABF9-2B0254A64280}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DividendMap.Tests", "DividendMap.Tests\DividendMap.Tests.csproj", "{9D573975-BDDA-45F6-BCA1-35901CB26E9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DividendMap.Tests", "DividendMap.Tests\DividendMap.Tests.csproj", "{9D573975-BDDA-45F6-BCA1-35901CB26E9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wallet", "Wallet\Wallet.csproj", "{A45608C5-D8FD-4D0D-B2C0-46FA91DC53D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9D573975-BDDA-45F6-BCA1-35901CB26E9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D573975-BDDA-45F6-BCA1-35901CB26E9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D573975-BDDA-45F6-BCA1-35901CB26E9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A45608C5-D8FD-4D0D-B2C0-46FA91DC53D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A45608C5-D8FD-4D0D-B2C0-46FA91DC53D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A45608C5-D8FD-4D0D-B2C0-46FA91DC53D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A45608C5-D8FD-4D0D-B2C0-46FA91DC53D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

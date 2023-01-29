@@ -6,10 +6,10 @@ public class Company
 {
     private Company() {}
 
-    public Company(string name, string stockName)
+    public Company(string name, string ticker)
     {
         Name = name;
-        Ticker = stockName;
+        Ticker = ticker;
     }
 
     public int Id { get; private set; }

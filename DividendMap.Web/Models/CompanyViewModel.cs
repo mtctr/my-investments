@@ -4,6 +4,6 @@
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string StockName { get; set; }
+        public string Ticker { get; set; }
     }
 }
