@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DividendMap.Web", "Dividend
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DividendMap.Tests", "DividendMap.Tests\DividendMap.Tests.csproj", "{9D573975-BDDA-45F6-BCA1-35901CB26E9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wallet", "Wallet\Wallet.csproj", "{A45608C5-D8FD-4D0D-B2C0-46FA91DC53D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyInvestments.Wallet", "MyInvestments.Wallet\MyInvestments.Wallet.csproj", "{A45608C5-D8FD-4D0D-B2C0-46FA91DC53D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wallet", "Wallet", "{5DD7F8D6-9594-46A0-AAB5-9A2F1514110D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyInvestments.Wallet.Tests", "MyInvestments.Wallet.Tests\MyInvestments.Wallet.Tests.csproj", "{1A96E6B4-62F0-4FA7-8003-868DD839C588}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +31,17 @@ Global
 		{A45608C5-D8FD-4D0D-B2C0-46FA91DC53D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A45608C5-D8FD-4D0D-B2C0-46FA91DC53D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A45608C5-D8FD-4D0D-B2C0-46FA91DC53D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A96E6B4-62F0-4FA7-8003-868DD839C588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A96E6B4-62F0-4FA7-8003-868DD839C588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A96E6B4-62F0-4FA7-8003-868DD839C588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A96E6B4-62F0-4FA7-8003-868DD839C588}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A45608C5-D8FD-4D0D-B2C0-46FA91DC53D4} = {5DD7F8D6-9594-46A0-AAB5-9A2F1514110D}
+		{1A96E6B4-62F0-4FA7-8003-868DD839C588} = {5DD7F8D6-9594-46A0-AAB5-9A2F1514110D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7C17CC73-1564-4331-B4A4-138D6644E1E1}

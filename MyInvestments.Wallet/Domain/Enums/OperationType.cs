@@ -1,4 +1,4 @@
-﻿namespace Wallet.Domain.Enums;
+﻿namespace MyInvestments.Wallet.Domain.Enums;
 
 public enum OperationType
 {
