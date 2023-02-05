@@ -1,4 +1,4 @@
-﻿namespace Wallet.Domain.Entities;
+﻿namespace MyInvestments.Wallet.Domain.Entities;
 
 public class IndustryType
 {

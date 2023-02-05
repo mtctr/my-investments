@@ -1,6 +1,6 @@
-﻿using Wallet.Domain.Enums;
+﻿using MyInvestments.Wallet.Domain.Enums;
 
-namespace Wallet.Domain.Entities;
+namespace MyInvestments.Wallet.Domain.Entities;
 
 public class Dividend
 {

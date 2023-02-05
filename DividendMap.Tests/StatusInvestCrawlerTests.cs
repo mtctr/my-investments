@@ -1,5 +1,5 @@
+using DividendMap.Web.Services.Adapters.WebCrawler;
 using DividendMap.Web.Services.Adapters.WebCrawler.StatusInvest;
-using DividendMap.Web.Services.WebCrawler;
 
 namespace DividendMap.Tests
 {

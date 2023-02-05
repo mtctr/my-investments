@@ -1,9 +1,16 @@
-﻿using Wallet.Domain.Enums;
+﻿using MyInvestments.Wallet.Domain.Enums;
 
-namespace Wallet.Domain.Entities;
+namespace MyInvestments.Wallet.Domain.Entities;
 
 public class Stock
 {
+    public Stock(int companyId, StockType type, DateTime updateDate)
+    {
+        CompanyId = companyId;
+        Type = type;
+        UpdateDate = updateDate;
+    }
+
     public int Id { get; private set; }
     public int CompanyId { get; private set; }
     public StockType Type { get; private set; }
@@ -19,7 +26,7 @@ public class Stock
     }
     public decimal LastYearDividends()
     {
-        return this.Dividends
+        return Dividends
             .Where(dividend => dividend.PayDate.GetValueOrDefault() >= DateTime.Today.AddYears(-1)
                 && dividend.PayDate.GetValueOrDefault() <= DateTime.Now)
             .Select(dividend => dividend.Value)
