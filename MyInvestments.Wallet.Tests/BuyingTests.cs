@@ -1,6 +1,4 @@
-﻿using MyInvestments.Wallet.Domain.Entities;
-
-namespace MyInvestments.Wallet.Tests
+﻿namespace MyInvestments.Wallet.Tests
 {
     public class BuyingTests
     {

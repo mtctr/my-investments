@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Wallet\MyInvestments.Wallet.csproj" />
+    <ProjectReference Include="..\MyInvestments.Wallet\MyInvestments.Wallet.csproj" />
   </ItemGroup>
 
 </Project>

@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyInvestments.Wallet", "MyI
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wallet", "Wallet", "{5DD7F8D6-9594-46A0-AAB5-9A2F1514110D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyInvestments.Wallet.Tests", "MyInvestments.Wallet.Tests\MyInvestments.Wallet.Tests.csproj", "{1A96E6B4-62F0-4FA7-8003-868DD839C588}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyInvestments.Wallet.Tests", "MyInvestments.Wallet.Tests\MyInvestments.Wallet.Tests.csproj", "{1A96E6B4-62F0-4FA7-8003-868DD839C588}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
