@@ -19,7 +19,7 @@
         [Theory]
         [InlineData(0)]
         [InlineData(-1.54)]
-        public void Create_an_operation_with_less_than_or_equal_zero__should_throw_an_exception(decimal unitPrice)
+        public void Create_an_operation_with_less_than_or_equal_zero_quantity_should_throw_an_exception(decimal unitPrice)
         {
             var walletId = Guid.NewGuid();
             var stockId = 321;
