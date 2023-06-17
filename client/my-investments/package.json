@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:production": "ng build --max_old_space_size=8000 --prod --aot --build-optimizer --common-chunk --vendor-chunk --optimization --progress --configuration=production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

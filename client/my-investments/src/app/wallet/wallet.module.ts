@@ -10,12 +10,14 @@ import { WalletIndexComponent } from './wallet-index/wallet-index.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { DividendMapComponent } from './dividend-map/dividend-map.component';
+import { MeanPriceComponent } from './mean-price/mean-price.component';
 
 
 
 @NgModule({
   declarations: [    
-    WalletIndexComponent
+    WalletIndexComponent, DividendMapComponent, MeanPriceComponent
   ],
   imports: [
     CommonModule,

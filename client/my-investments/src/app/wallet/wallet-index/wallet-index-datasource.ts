@@ -29,7 +29,7 @@ const EXAMPLE_DATA: Stock[] = [
   {id: 4, name: "Klabin", ticker:"KLBN4", total: 400, unitPrice: 4.27, totalPrice:1708, unitsGoal:145, costToGoal: -1088.85, position: 13.89, goal: 5, meanPrice: 3.71, totalPaid: 1482.14, gainLoss: 225.86 },
   {id: 5, name: "Itaúsa", ticker:"ITSA4", total: 120, unitPrice: 8.98, totalPrice:1077.60, unitsGoal:124, costToGoal: 35.92, position: 8.76, goal: 9, meanPrice: 8.35, totalPaid: 1001.69, gainLoss: 75.91 },
   {id: 6, name: "Cemig", ticker:"CMIG4", total: 74, unitPrice: 12.03, totalPrice:890.22, unitsGoal:72, costToGoal: -24.06, position: 7.24, goal: 7, meanPrice: 10.41, totalPaid: 770.56, gainLoss: 119.66 },
-  {id: 7, name: "Copel", ticker:"CPLE6", total: 110, unitPrice: 7.68, totalPrice:844.80, unitsGoal:113, costToGoal: 23.04, position: 6.87, goal: 7, meanPrice: 6.82, totalPaid: 750.44, gainLoss: 94.36 },
+  {id: 7, name: "Copel", ticker:"CPLE3", total: 122, unitPrice: 7.68, totalPrice:844.80, unitsGoal:113, costToGoal: 23.04, position: 6.87, goal: 7, meanPrice: 6.82, totalPaid: 750.44, gainLoss: 94.36 },
   {id: 8, name: "Irani", ticker:"RANI3", total: 61, unitPrice: 8.61, totalPrice:525.21, unitsGoal:72, costToGoal: 94.71, position: 4.27, goal: 5, meanPrice: 8.13, totalPaid: 495.92, gainLoss: 29.29 },
 ];
 
